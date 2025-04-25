@@ -27,6 +27,8 @@ jobs:
           cache-dependency-path: yarn.lock
           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
           node-version: 22.x
+      - name: Enable yarn berry
+        run: corepack enable
       - name: Install dependencies
         run: yarn
       - name: Run build
