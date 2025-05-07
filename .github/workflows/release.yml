@@ -57,7 +57,7 @@ jobs:
           ls -la
           RELEASE_VERSION="$(npm pkg get version | tr -d '"')"
           RELEASE_FILENAME="v${RELEASE_VERSION}.zip"
-          zip -r "${RELEASE_FILENAME}" dist
+          zip -rj "${RELEASE_FILENAME}" dist
           gh release create "v${RELEASE_VERSION}" "${RELEASE_FILENAME}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
