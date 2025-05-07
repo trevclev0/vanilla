@@ -38,7 +38,7 @@ jobs:
         with:
           name: release_contents
           path: |
-            ./dist
+            dist
 
   # Create GitHub Release
   release:
@@ -51,6 +51,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: release_contents
+          path: dist
       - name: Creates a release in GitHub and uploads attachments
         run: |
           ls -la
