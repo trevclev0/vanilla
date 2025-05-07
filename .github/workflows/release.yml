@@ -33,11 +33,13 @@ jobs:
         run: yarn
       - name: Run build
         run: yarn build
-      - name: Upload artifact
+      - name: Upload data for release job
         uses: actions/upload-artifact@v4
         with:
           name: release_contents
-          path: dist
+          path: |
+            ./dist
+            package.json
 
   # Create GitHub Release
   release:
