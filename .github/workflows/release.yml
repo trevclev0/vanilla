@@ -40,6 +40,7 @@ jobs:
     steps:
       - name: Creates a release in GitHub and uploads attachments
         run: |
+          ls -la
           RELEASE_VERSION="$(npm pkg get version | tr -d '"')"
           RELEASE_FILENAME="v${RELEASE_VERSION}.zip"
           zip -r "${RELEASE_FILENAME}" dist
