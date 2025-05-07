@@ -38,7 +38,7 @@ jobs:
         with:
           name: release_contents
           path: |
-            ./.git
+            .git
             ./dist
             package.json
 
